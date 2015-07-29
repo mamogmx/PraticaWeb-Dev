@@ -1,5 +1,7 @@
 <?php
-require_once "lib/utils.class.php"
+require_once "init.php";
+require_once "login.php";
+$form = (user::isLoggedUser())?(""):(",href:'enter.php'");
 ?>
 <HTML>
 <HEAD>
@@ -9,13 +11,21 @@ require_once "lib/utils.class.php"
         utils::loadJS();
         utils::loadCss();
     ?> 
+    <STYLE>
+        div.region{
+            border-collapse:collapse;
+            border: 1px solid black;
+        }
+    </STYLE>
 </HEAD>
 <BODY>
-    <div id="myLayout" class="easyui-layout" style="margin: 1%;width:98%;height:96%; ">
-        <div data-options="region:'west'"></div>
-        <div data-options="region:'north'" ></div>
-        <div data-options="region:'south'"></div>
-        <div data-options="region:'center',title:'Main Title'">
+    <div id="myApp" class="easyui-layout" style="margin: 1%;width:98%;height:96%;">
+        <!--<div id="west" data-options="region:'west'" style="width:20%;height:80%;border-collapse:collapse;border: 1px solid black;"></div>-->
+        <div class="region" id="north" data-options="region:'north'" style="width:100%;height:10%;">
+            
+        </div>
+        <div class="region" id="south" data-options="region:'south'" style="width:100%;height:10%;"></div>
+        <div class="region" id="center" data-options="region:'center'<?php echo $form;?>" style="width:100%;height:80%;">
             
         </div>
     </div>

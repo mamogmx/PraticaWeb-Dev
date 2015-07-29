@@ -15,8 +15,8 @@ class utils {
     const jsLocalURL = "/js/local";
     const cssURL="/css";
     const cssLocalURL="/css/local";
-    public static $js = Array('jquery','jquery-ui.min','jquery.easyui.min','bootstrap','w2ui-1.4.3.min','sprintf','message','init.page');
-    public static $css = Array('jquery-ui.min','themes/bootstrap.min','themes/color','themes/icon','w2ui-1.4.3.min');
+    public static $js = Array('jquery','bootstrap','jquery.easyui.min','w2ui-1.4.3.min','sprintf','message','init.page');
+    public static $css = Array('jquery-ui.min','themes/bootstrap/easyui','themes/color','themes/icon','themes/bootstrap.min','w2ui-1.4.3.min');
     
     static function mergeParams($prms=Array(),$defaultParams=Array()){
         foreach($defaultParams as $key=>$val){
@@ -39,9 +39,13 @@ class utils {
     static function resizeImages($prms=Array()) {
         
     }
+    static function getArray($data){
+        return explode(',',str_replace(Array('{','}'),'',$data));
+    }
     static function getDb($params=Array()){
-        $dsn = sprintf('pgsql:dbname=%s;host=%s;port=%s',DB_NAME,DB_HOST,DB_PORT);
-        $conn = new PDO($dsn, DB_USER, DB_PWD);
+        $user = ($params["user"])?($params["user"]):(DB_USER);
+        $pwd = ($params["pwd"])?($params["pwd"]):(DB_PWD);
+        $conn = new PDO(DSN, $user, $pwd);
         return $conn;
     }
     
