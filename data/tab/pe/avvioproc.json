@@ -1,0 +1,87 @@
+{
+  "general": {
+    "schema": "",
+    "table": "",
+    "editable": [],
+    "viewable": [],
+    "data-source": []
+  },
+  "default": {},
+  "new": {},
+  "edit": {},
+  "view": {
+    "schema": "",
+    "table": "",
+    "sections": {
+      "title": "",
+      "class": [],
+      "rows": [
+        {
+          "class": [],
+          "cells": [
+            {
+              "size": 6,
+              "label": "Numero Pratica",
+              "class": [],
+              "ctr": [
+                {
+                  "id": "numero",
+                  "type": "input",
+                  "class": [],
+                  "styles": {
+                    "width": "50px"
+                  },
+                  "html5-attr": {
+                    
+                  }
+                }
+              ]
+            },
+            {
+              "size": 6,
+              "label": "Data Presentazione",
+              "class": [],
+              "ctr": [
+                {
+                  "id": "",
+                  "type": "",
+                  "class": [],
+                  "styles": {},
+                  "html5-attr": {
+                    
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "class": [],
+          "cells": [
+            {
+              "size": "",
+              "label": "",
+              "class": [],
+              "ctr": [
+                {
+                  "id": "",
+                  "type": "",
+                  "class": [],
+                  "styles": {},
+                  "html5-attr": {
+                    
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "list": {
+    "schema": "",
+    "table": "",
+    "order_by": []
+  }
+}
