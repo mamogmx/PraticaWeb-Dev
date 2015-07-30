@@ -7,5 +7,6 @@ if($_SESSION["PWD"]) define('DB_PWD',$_SESSION["PWD"]);
 
 define('LIB',APPS_DIR."lib".DIRECTORY_SEPARATOR);
 define('LOCAL_LIB',DATA_DIR."lib".DIRECTORY_SEPARATOR);
+define('TAB',DATA_DIR."tab".DIRECTORY_SEPARATOR);
 ?>
 

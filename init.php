@@ -1,7 +1,7 @@
 <?php
 
 function loadLibs(){
-    $libs=Array("utils.class.php","app.class.php","user.class.php");
+    $libs=Array("utils.class.php","app.class.php","user.class.php","form.class.php");
     foreach($libs as $lib){
         if (file_exists(LOCAL_LIB.$lib)){
             require_once LOCAL_LIB.$lib;

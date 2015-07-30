@@ -1,10 +1,24 @@
 {
   "general": {
-    "schema": "",
-    "table": "",
+    "schema": "pe",
+    "table": "avvioproc",
     "editable": [],
     "viewable": [],
-    "data-source": []
+    "data-source": [
+      {
+        "name" : "user",
+        "schema": "pe",
+        "table": "utenti",
+        "id": "data->>'username'",
+        "label": "data->>'nominativo'",
+        "other_field": [],
+        "filter": "coalesce(data->>'username','')<>''",
+        "order" : [{
+          "sort_on" : "data->>'username'",
+          "sort_order" : "desc"
+        }]
+      }
+    ]
   },
   "default": {},
   "new": {},
@@ -26,14 +40,12 @@
               "ctr": [
                 {
                   "id": "numero",
-                  "type": "input",
+                  "type": "text",
                   "class": [],
                   "styles": {
                     "width": "50px"
                   },
-                  "html5-attr": {
-                    
-                  }
+                  "html5-attr": {}
                 }
               ]
             },
@@ -43,13 +55,11 @@
               "class": [],
               "ctr": [
                 {
-                  "id": "",
-                  "type": "",
+                  "id": "data_presentazione",
+                  "type": "date",
                   "class": [],
                   "styles": {},
-                  "html5-attr": {
-                    
-                  }
+                  "html5-attr": {}
                 }
               ]
             }
@@ -59,18 +69,30 @@
           "class": [],
           "cells": [
             {
-              "size": "",
-              "label": "",
+              "size": "6",
+              "label": "Numero Protocollo",
               "class": [],
               "ctr": [
                 {
-                  "id": "",
-                  "type": "",
+                  "id": "protocollo",
+                  "type": "text",
                   "class": [],
                   "styles": {},
-                  "html5-attr": {
-                    
-                  }
+                  "html5-attr": {}
+                }
+              ]
+            },
+            {
+              "size": "6",
+              "label": "Data Protocollo",
+              "class": [],
+              "ctr": [
+                {
+                  "id": "data_protocollo",
+                  "type": "date",
+                  "class": [],
+                  "styles": {},
+                  "html5-attr": {}
                 }
               ]
             }

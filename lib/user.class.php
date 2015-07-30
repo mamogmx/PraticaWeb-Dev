@@ -29,7 +29,7 @@ class user {
         }
         $res = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($res){
-            $data["pwd"]=$pwd;
+            $data["pwd"]=md5($pwd);
             $data["user"]=$user;
             $data["groups"]=utils::getArray($res["groups"]);
             app::setUserInfo($data);

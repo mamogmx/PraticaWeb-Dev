@@ -35,6 +35,6 @@ class app {
         $info = self::getInfo();
     }
     static function createStructure(){
-        return self::loadTemplate("structure");
+        //return self::loadTemplate("structure");
     }
 }

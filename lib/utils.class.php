@@ -45,7 +45,8 @@ class utils {
     static function getDb($params=Array()){
         $user = ($params["user"])?($params["user"]):(DB_USER);
         $pwd = ($params["pwd"])?($params["pwd"]):(DB_PWD);
-        $conn = new PDO(DSN, $user, $pwd);
+        $dsn = ($params["dsn"])?($params["dsn"]):(DSN);
+        $conn = new PDO($dsn, $user, $pwd);
         return $conn;
     }
     
@@ -190,7 +191,8 @@ class utils {
         }  
         return $result;
     }
-    static function getDbDataToJson($sql,$conn){
+    
+    static function getDbDataToJson($sql,$conn,$params=Array()){
         if (!$conn){
             $conn=self::getDb();
         }
@@ -199,6 +201,7 @@ class utils {
         $result=$sth->fetchAll(PDO::FETCH_ASSOC);
         return json_encode($result);
     }
+    
     static function getUser($userId){
         $conn=self::getDb();
         //DETTAGLI SULL'UTENTE
